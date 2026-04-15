@@ -1,0 +1,7 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "FORCE_COLOR=1 npx -y ccstatusline@latest",
+    "padding": 0
+  }
+}

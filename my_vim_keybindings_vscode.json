@@ -1,0 +1,203 @@
+{
+    "workbench.colorTheme": "Everforest Dark",
+    "workbench.iconTheme": "file-icons",
+    "workbench.list.horizontalScrolling": true,
+    "workbench.activityBar.location": "default",
+    "workbench.editorAssociations": {
+        "*.csv": "gc-excelviewer-csv-editor"
+    },
+    "editor.fontFamily": "Fira Code Retina, LXGW WenKai Mono, JetBrainsMono Nerd Font",
+    "editor.fontSize": 13,
+    "editor.fontLigatures":true,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.smoothScrolling": true,
+    "editor.stickyScroll.enabled": false,
+    "editor.occurrencesHighlight": "off",
+    "editor.cursorSurroundingLines": 5,
+    "editor.minimap.enabled": false,
+    "editor.guides.indentation": false,
+    "editor.wordWrapColumn": 120,
+    "editor.lineNumbers":"on",
+    "zenMode.hideLineNumbers": false,
+    "editor.suggest.insertMode":"insert",
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.shellIntegration.history": 0,
+    "terminal.integrated.persistentSessionReviveProcess": "never",
+    "explorer.sortOrder": "type",
+    "explorer.confirmDelete": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "extensions.ignoreRecommendations": true,
+
+    // R
+    "r.rterm.mac": "/Users/daqian_mbp/.local/bin/radian",
+    "r.rterm.option": [
+        "--no-site-file"
+    ],
+    "r.bracketedPaste": true,
+    "r.plot.defaults.fullWindowMode": true,
+
+    // Vim
+    "vim.easymotion": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
+    "vim.highlightedyank.textColor": "beige",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+        ],
+        "vim.normalModeKeyBindingsNonRecursive": [
+        // {
+        //     "before": ["<leader>", "d"],
+        //     "after": ["d", "d"]
+        // },
+        {
+            "before": ["<C-n>"],
+            "commands": [":nohl"]
+        },
+        {
+            "before": ["K"],
+            "commands": ["lineBreakInsert"],
+            "silent": true
+        },
+        {
+            "before": ["leader", "c"],
+            "commands": ["extension.toggleBool"]  // Convert TRUE and FALSE
+        }
+        ],
+        "vim.normalModeKeyBindings": [
+            // coursor moving
+            {
+                "before": ["H"],
+                "after": ["^"]
+            },
+            {
+                "before": ["L"],
+                "after": ["g", "_"] 
+            },
+            {
+                "before": ["J"],
+                "after": ["5", "j"] 
+            },
+            {
+                "before": ["K"],
+                "after": ["5", "k"] 
+            },
+            // from Editor jump into Terminal
+            {
+            "before": ["<leader>", "t"],
+            "commands": ["workbench.action.terminal.focus"]
+            },
+            // change Tabs
+            {
+            "before": ["<Tab>", "l"],
+            "commands": [":tabn"]
+            },
+            {
+            "before": ["<Tab>", "h"],
+            "commands": [":tabp"]
+            }
+
+        ],
+        "vim.leader": "<space>",
+        "vim.handleKeys": {
+          "<C-a>": false,
+          "<C-f>": false
+        },
+
+        // Comment Anchors
+        "commentAnchors.parseDelay": 200,
+        "commentAnchors.workspace.maxFiles": 50,
+        "commentAnchors.workspace.matchFiles": "{**/*.Rmd,**/*.Qmd,**/*.md,**/*.R,**/*.py}",
+        "commentAnchors.tags.matchPrefix": [
+            "//",
+            "#"
+        ],
+        "commentAnchors.tags.matchSuffix": [],
+        "commentAnchors.tags.anchors": {
+            "ANCHOR": {
+                "iconColor": "default",
+                "highlightColor": "#A8C023",
+                "scope": "file"
+            },
+            "TODO": {
+                "iconColor": "blue",
+                "highlightColor": "#3ea8ff",
+                "scope": "workspace"
+            },
+            "FIXME": {
+                "iconColor": "red",
+                "highlightColor": "#F44336",
+                "scope": "workspace"
+            },
+            "STUB": {
+                "iconColor": "purple",
+                "highlightColor": "#BA68C8",
+                "scope": "file"
+            },
+            "NOTE": {
+                "iconColor": "orange",
+                "highlightColor": "#FFB300",
+                "scope": "file"
+            },
+            "MARK": {
+                "iconColor": "green",
+                "highlightColor": "#64DD17",
+                "scope": "workspace"
+            },
+            "SECTION": {
+                "iconColor": "blurple",
+                "highlightColor": "#896afc",
+                "scope": "workspace",
+                "behavior": "region"
+            },
+            "LINK": {
+                "iconColor": "#2ecc71",
+                "highlightColor": "#2ecc71",
+                "scope": "workspace",
+                "behavior": "link"
+            }
+        },
+        
+        // vscode-pets
+        "vscode-pets.petSize": "small",
+        "vscode-pets.throwBallWithMouse": true,
+        
+        // Project Manager
+        "projectManager.any.ignoredFolders": [
+            "node_modules",
+            "out",
+            "typings",
+            ".cache",
+            ".vscode",
+            ".Rproj.user",
+            ".texpadtmp"
+        ],
+        "projectManager.any.baseFolders": [
+            "/Users/daniel_mini/Documents/R"
+        ],
+        "projectManager.any.maxDepthRecursion": 1,
+        "window.commandCenter": false,
+        "workbench.startupEditor": "none",
+        "terminal.integrated.commandsToSkipShell": [
+            "language-julia.interrupt"
+        ],
+        "julia.symbolCacheDownload": true,
+        "editor.unicodeHighlight.nonBasicASCII": false,
+        "parquet-viewer.format": "csv",
+        "editor.inlineSuggest.edits.showCollapsed": true,
+        "github.copilot.nextEditSuggestions.enabled": false,
+        "r.plot.useHttpgd": true,
+        "chat.mcp.gallery.enabled": true,
+        "workbench.editor.autoLockGroups": {
+            "pdf.preview": true
+        },
+        "chat.viewSessions.orientation": "stacked",
+
+
+}
