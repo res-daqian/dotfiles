@@ -8,4 +8,4 @@
 # so the statusline reflects reality.
 effort=$(jq -r '.effortLevel // empty' "$HOME/.claude/settings.json" 2>/dev/null)
 [ -z "$effort" ] && effort=default
-printf 'Thinking: %s' "$effort"
+printf 'Effort: %s' "$effort"
