@@ -2,7 +2,7 @@
   "version": 3,
   "lines": [
     [
-      { "id": "1", "type": "current-working-dir", "color": "brightYellow", "rawValue": true, "metadata": { "segments": "3", "abbreviateHome": "true" } }
+      { "id": "1", "type": "current-working-dir", "color": "brightYellow", "rawValue": true, "metadata": { "segments": "4", "abbreviateHome": "true" } }
     ],
     [
       { "id": "2", "type": "model", "color": "yellow", "rawValue": true },
@@ -14,21 +14,21 @@
       { "id": "10", "type": "tokens-total", "color": "brightBlack" },
       { "id": "11", "type": "separator" },
       { "id": "12", "type": "git-branch", "color": "magenta" },
-      { "id": "13", "type": "git-changes", "color": "red", "merge": "no-padding" }
+      { "id": "13", "type": "git-changes", "color": "red", "merge": "no-padding" },
+      { "id": "15", "type": "separator" },
+      { "id": "16", "type": "context-bar", "color": "cyan", "rawValue": true, "metadata": { "display": "progress-short" } }
     ],
     [
-      { "id": "16", "type": "context-bar", "color": "cyan", "rawValue": true, "metadata": { "display": "progress-short" } },
-      { "id": "17", "type": "separator" },
-      { "id": "20", "type": "custom-text", "color": "green", "customText": "5h ", "merge": "no-padding" },
+      { "id": "20", "type": "custom-text", "color": "green", "customText": "5h " },
       { "id": "21", "type": "session-usage", "color": "green", "rawValue": true, "metadata": { "display": "progress-short" } },
       { "id": "22", "type": "separator" },
-      { "id": "23", "type": "block-reset-timer", "color": "brightYellow", "metadata": { "compact": "true" } }
-    ],
-    [
-      { "id": "24", "type": "custom-text", "color": "yellow", "customText": "Week ", "merge": "no-padding" },
+      { "id": "24", "type": "custom-text", "color": "yellow", "customText": "Week " },
       { "id": "25", "type": "weekly-usage", "color": "yellow", "rawValue": true, "metadata": { "display": "progress-short" } },
       { "id": "26", "type": "separator" },
-      { "id": "27", "type": "weekly-reset-timer", "color": "brightBlack", "metadata": { "compact": "true" } }
+      { "id": "27", "type": "weekly-reset-timer", "color": "brightBlack", "metadata": { "compact": "true" } },
+      { "id": "28", "type": "separator" },
+      { "id": "29", "type": "custom-text", "color": "brightYellow", "customText": "5h " },
+      { "id": "23", "type": "block-reset-timer", "color": "brightYellow", "metadata": { "compact": "true" } }
     ]
   ],
   "colorLevel": 1,
@@ -38,7 +38,7 @@
   "globalBold": false,
   "powerline": {
     "enabled": false,
-    "separators": ["\ue0b0"],
+    "separators": [""],
     "separatorInvertBackground": [false],
     "startCaps": [],
     "endCaps": [],
