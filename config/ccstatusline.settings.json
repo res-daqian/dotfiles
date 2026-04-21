@@ -27,7 +27,7 @@
       { "id": "26", "type": "separator" },
       { "id": "29", "type": "custom-command", "color": "brightYellow", "commandPath": "/Users/daqian_mbp/.config/ccstatusline/scripts/5h-reset.sh", "timeout": 500 },
       { "id": "28", "type": "separator" },
-      { "id": "27", "type": "weekly-reset-timer", "color": "brightBlack", "metadata": { "compact": "true" } }
+      { "id": "27", "type": "custom-command", "color": "brightBlack", "commandPath": "/Users/daqian_mbp/.config/ccstatusline/scripts/weekly-reset.sh", "timeout": 500 }
     ]
   ],
   "colorLevel": 1,
