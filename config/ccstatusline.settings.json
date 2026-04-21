@@ -7,7 +7,7 @@
     [
       { "id": "2", "type": "model", "color": "yellow", "rawValue": true },
       { "id": "3", "type": "separator" },
-      { "id": "4", "type": "thinking-effort", "color": "brightBlack" },
+      { "id": "4", "type": "custom-command", "color": "brightBlack", "commandPath": "/Users/daqian_mbp/.config/ccstatusline/scripts/thinking-effort.sh", "timeout": 500 },
       { "id": "5", "type": "separator" },
       { "id": "8", "type": "session-cost", "color": "green" },
       { "id": "9", "type": "separator" },

@@ -34,3 +34,18 @@ function y() {
 
   rm -f -- "$tmp"
 }
+
+# Config shell to use "lsd" instead of "ls"
+alias ls='lsd'
+
+# zoxide: smarter cd. `z foo` jumps to most-frecent dir matching foo;
+# `zi foo` opens an fzf picker over matches.
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
+
+# fzf shell integration: Ctrl-R (history), Ctrl-T (file picker),
+# Alt-C (cd into subdir), and `**<TAB>` fuzzy completion.
+if command -v fzf >/dev/null 2>&1; then
+  eval "$(fzf --zsh)"
+fi
