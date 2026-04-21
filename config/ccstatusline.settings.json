@@ -17,11 +17,18 @@
       { "id": "13", "type": "git-changes", "color": "red", "merge": "no-padding" }
     ],
     [
-      { "id": "14", "type": "block-timer", "color": "blue", "metadata": { "display": "progress-short" } },
-      { "id": "15", "type": "separator" },
       { "id": "16", "type": "context-bar", "color": "cyan", "rawValue": true, "metadata": { "display": "progress-short" } },
       { "id": "17", "type": "separator" },
-      { "id": "18", "type": "session-usage", "color": "green", "metadata": { "display": "progress-short" } }
+      { "id": "20", "type": "custom-text", "color": "green", "customText": "5h ", "merge": "no-padding" },
+      { "id": "21", "type": "session-usage", "color": "green", "rawValue": true, "metadata": { "display": "progress-short" } },
+      { "id": "22", "type": "separator" },
+      { "id": "23", "type": "block-reset-timer", "color": "brightYellow", "metadata": { "compact": "true" } }
+    ],
+    [
+      { "id": "24", "type": "custom-text", "color": "yellow", "customText": "Week ", "merge": "no-padding" },
+      { "id": "25", "type": "weekly-usage", "color": "yellow", "rawValue": true, "metadata": { "display": "progress-short" } },
+      { "id": "26", "type": "separator" },
+      { "id": "27", "type": "weekly-reset-timer", "color": "brightBlack", "metadata": { "compact": "true" } }
     ]
   ],
   "colorLevel": 1,
