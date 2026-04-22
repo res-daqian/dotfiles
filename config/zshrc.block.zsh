@@ -1,7 +1,4 @@
-# Load Homebrew into the shell environment when available.
-if [ -x /opt/homebrew/bin/brew ]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
+# Note: Homebrew shellenv and pipx PATH are sourced from ~/.zprofile (login shell).
 
 # Starship gives you the Powerline-style prompt shown in Ghostty.
 if command -v starship >/dev/null 2>&1; then
