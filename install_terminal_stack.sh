@@ -6,6 +6,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG_DIR="$SCRIPT_DIR/config"
 
 ZSHRC="$HOME/.zshrc"
+ZPROFILE="$HOME/.zprofile"
+CONDARC="$HOME/.condarc"
 STARSHIP_CONF="$HOME/.config/starship.toml"
 YAZI_DIR="$HOME/.config/yazi"
 YAZI_CONF="$YAZI_DIR/yazi.toml"
@@ -16,8 +18,6 @@ NVIM_DIR="$HOME/.config/nvim"
 GHOSTTY_DIR="$HOME/Library/Application Support/com.mitchellh.ghostty"
 GHOSTTY_CONF="$GHOSTTY_DIR/config.ghostty"
 
-BLOCK_START="# AI_TERMINAL_CONFIGS:START"
-BLOCK_END="# AI_TERMINAL_CONFIGS:END"
 TIMESTAMP="$(date +%Y%m%d-%H%M%S)"
 
 require_command() {
@@ -45,32 +45,6 @@ backup_path() {
 ensure_parent_dir() {
   local path="$1"
   mkdir -p "$(dirname "$path")"
-}
-
-replace_managed_block() {
-  local target="$1"
-  local content_file="$2"
-  local tmp
-
-  ensure_parent_dir "$target"
-  touch "$target"
-
-  tmp="$(mktemp)"
-  awk -v start="$BLOCK_START" -v end="$BLOCK_END" '
-    BEGIN { in_block = 0 }
-    $0 == start { in_block = 1; next }
-    $0 == end { in_block = 0; next }
-    !in_block { print }
-  ' "$target" > "$tmp"
-
-  {
-    cat "$tmp"
-    printf "\n%s\n" "$BLOCK_START"
-    cat "$content_file"
-    printf "%s\n" "$BLOCK_END"
-  } > "$target"
-
-  rm -f "$tmp"
 }
 
 install_packages() {
@@ -128,6 +102,8 @@ main() {
   mkdir -p "$GHOSTTY_DIR"
 
   backup_file "$ZSHRC"
+  backup_file "$ZPROFILE"
+  backup_file "$CONDARC"
   backup_file "$STARSHIP_CONF"
   backup_file "$YAZI_CONF"
   backup_file "$YAZI_KEYMAP"
@@ -142,7 +118,9 @@ main() {
 
   cleanup_obsolete_tmux
 
-  replace_managed_block "$ZSHRC" "$CONFIG_DIR/zshrc.block.zsh"
+  install -m 0644 "$CONFIG_DIR/zshrc" "$ZSHRC"
+  install -m 0644 "$CONFIG_DIR/zprofile" "$ZPROFILE"
+  install -m 0644 "$CONFIG_DIR/condarc" "$CONDARC"
   install -m 0644 "$CONFIG_DIR/starship.toml" "$STARSHIP_CONF"
   install -m 0644 "$CONFIG_DIR/yazi.toml" "$YAZI_CONF"
   install -m 0644 "$CONFIG_DIR/yazi.keymap.toml" "$YAZI_KEYMAP"
