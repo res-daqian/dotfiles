@@ -1,0 +1,90 @@
+# Proxy (Auto-enable proxy whenever a new terminal opens)
+export all_proxy=socks5://127.0.0.1:7897  # remove to disable the auto-enable
+export http_proxy=http://127.0.0.1:7897   # remove to disable the auto-enable
+export https_proxy=http://127.0.0.1:7897  # remove to disable the auto-enable
+alias proxy='export all_proxy=socks5://127.0.0.1:7897; export http_proxy=http://127.0.0.1:7897; export https_proxy=http://127.0.0.1:7897'
+alias unproxy='unset all_proxy http_proxy https_proxy'
+# End of Proxy section
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/daqian_mbp/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+
+
+
+
+
+
+
+
+
+
+
+# AI_TERMINAL_CONFIGS:START
+# Note: Homebrew shellenv and pipx PATH are sourced from ~/.zprofile (login shell).
+
+# Starship gives you the Powerline-style prompt shown in Ghostty.
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
+fi
+
+# Run Codex inline in scrollback instead of taking over the alternate screen.
+# alias cx='codex --no-alt-screen'
+
+# Use Neovim as the default editor for shells and TUIs that honor EDITOR/VISUAL.
+export VISUAL="nvim"
+export EDITOR="nvim"
+
+# Fish-style inline suggestions from shell history and completions.
+if [ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+# Launch Yazi and move the shell into the last directory you visited there.
+function y() {
+  local tmp cwd
+
+  tmp="$(mktemp -t yazi-cwd.XXXXXX)"
+  yazi "$@" --cwd-file="$tmp"
+  cwd="$(cat -- "$tmp" 2>/dev/null)" || true
+
+  if [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+
+  rm -f -- "$tmp"
+}
+
+# Config shell to use "lsd" instead of "ls"
+alias ls='lsd'
+
+# zoxide: smarter cd. `z foo` jumps to most-frecent dir matching foo;
+# `zi foo` opens an fzf picker over matches.
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
+
+# fzf shell integration: Ctrl-R (history), Ctrl-T (file picker),
+# Alt-C (cd into subdir), and `**<TAB>` fuzzy completion.
+if command -v fzf >/dev/null 2>&1; then
+  eval "$(fzf --zsh)"
+fi
+# AI_TERMINAL_CONFIGS:END

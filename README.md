@@ -37,7 +37,10 @@ Files in this repo:
 - `config/ghostty.config`
 - `config/nvim/`
 - `install_terminal_stack.sh`
-- `config/zshrc.block.zsh`
+- `config/zshrc.block.zsh` — managed AI_TERMINAL_CONFIGS block injected into `~/.zshrc`
+- `config/zshrc` — full `~/.zshrc` snapshot (proxy, LM Studio, conda init, managed block)
+- `config/zprofile` — full `~/.zprofile` snapshot (Homebrew shellenv, pipx PATH)
+- `config/condarc` — full `~/.condarc` snapshot (`auto_activate: false` for on-demand conda)
 - `config/yazi.toml`
 - `config/yazi.keymap.toml`
 - `config/starship.toml`

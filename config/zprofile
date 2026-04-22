@@ -1,0 +1,8 @@
+
+# python.org installer PATH removed — install is unused; Homebrew Python serves
+# pipx, anaconda Python takes `python`. Saved in .zprofile.pysave if needed.
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Created by `pipx` on 2025-10-02 08:40:56
+export PATH="$PATH:/Users/daqian_mbp/.local/bin"
