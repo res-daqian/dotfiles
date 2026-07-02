@@ -1,8 +1,8 @@
 # Proxy (Auto-enable proxy whenever a new terminal opens)
-export all_proxy=socks5://127.0.0.1:7897  # remove to disable the auto-enable
-export http_proxy=http://127.0.0.1:7897   # remove to disable the auto-enable
-export https_proxy=http://127.0.0.1:7897  # remove to disable the auto-enable
-alias proxy='export all_proxy=socks5://127.0.0.1:7897; export http_proxy=http://127.0.0.1:7897; export https_proxy=http://127.0.0.1:7897'
+export all_proxy=socks5://127.0.0.1:7890  # remove to disable the auto-enable
+export http_proxy=http://127.0.0.1:7890   # remove to disable the auto-enable
+export https_proxy=http://127.0.0.1:7890  # remove to disable the auto-enable
+alias proxy='export all_proxy=socks5://127.0.0.1:7890; export http_proxy=http://127.0.0.1:7890; export https_proxy=http://127.0.0.1:7890'
 alias unproxy='unset all_proxy http_proxy https_proxy'
 # End of Proxy section
 
@@ -82,4 +82,7 @@ fi
 if command -v fzf >/dev/null 2>&1; then
   eval "$(fzf --zsh)"
 fi
+
+# Manually back up Claude Code conversation sessions to the private GitHub repo.
+alias claude-sync='$HOME/claude-sessions/sync.sh'
 # AI_TERMINAL_CONFIGS:END
